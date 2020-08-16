@@ -24,7 +24,7 @@ ExternalProject_Add(
         extern_leveldb
         ${EXTERNAL_PROJECT_LOG_ARGS}
         PREFIX ${LEVELDB_SOURCES_DIR}
-        GIT_REPOSITORY "https://github.com/google/leveldb"
+        GIT_REPOSITORY "ssh://git@git.home.renwei.net:6022/home/git/gitrepo/leveldb.git"
         GIT_TAG v1.18
         UPDATE_COMMAND ""
         CONFIGURE_COMMAND ""

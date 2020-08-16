@@ -29,6 +29,25 @@ endfunction()
 
 CheckCompilerCXX14Flag()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+# CheckCompilerCXX11Flag()
+# set(CXX_STD_FLAG "-std=")
+# set(CXX_STD_VERSION "c++11")
+# if (WIN32)
+#   set(CXX_STD_FLAG "/std:")
+# endif()
+# if (WITH_GPU)
+#   if (${CMAKE_CUDA_COMPILER_VERSION} GREATER_EQUAL 11.0)
+#     set(CXX_STD_VERSION "c++14")
+#   else()
+#     if (WIN32)
+#       set(CXX_STD_VERSION "c++14")
+#     else()
+#       set(CXX_STD_VERSION "c++11")
+#     endif()
+#   endif()
+# endif()
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_STD_FLAG}${CXX_STD_VERSION}")
+
 # safe_set_flag
 #
 # Set a compile flag only if compiler is support

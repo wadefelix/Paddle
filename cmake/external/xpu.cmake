@@ -4,6 +4,14 @@ endif()
 
 INCLUDE(ExternalProject)
 SET(XPU_PROJECT                 "extern_xpu")
+SET(XPU_URL    "../../../../../paddle-external-deps/xpu.tar.gz" CACHE STRING "" FORCE)
+SET(XPU_SOURCE_DIR              "${THIRD_PARTY_PATH}/xpu")
+SET(XPU_DOWNLOAD_DIR            "${XPU_SOURCE_DIR}/src/${XPU_PROJECT}")
+SET(XPU_INSTALL_DIR             "${THIRD_PARTY_PATH}/install/xpu")
+SET(XPU_API_INC_DIR             "${THIRD_PARTY_PATH}/install/xpu/api/include")
+SET(XPU_RUNTIME_INC_DIR         "${THIRD_PARTY_PATH}/install/xpu/runtime/include")
+SET(XPU_LIB_DIR                 "${THIRD_PARTY_PATH}/install/xpu/lib")
+
 SET(XPU_API_LIB_NAME            "libxpuapi.so")
 SET(XPU_RT_LIB_NAME             "libxpurt.so")
 

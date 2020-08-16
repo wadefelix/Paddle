@@ -242,7 +242,7 @@ if(WITH_GPU)
         include(external/cub)       # download cub
         list(APPEND third_party_deps extern_cub)
     endif()
-    set(CUDAERROR_URL  "http://paddlepaddledeps.bj.bcebos.com/cudaErrorMessage.tar.gz" CACHE STRING "" FORCE)
+    set(CUDAERROR_URL  "../../../../paddle-external-deps/cudaErrorMessage.tar.gz" CACHE STRING "" FORCE)
     file_download_and_uncompress(${CUDAERROR_URL} "cudaerror") # download file cudaErrorMessage
 endif(WITH_GPU)
 

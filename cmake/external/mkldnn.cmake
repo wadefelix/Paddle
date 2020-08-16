@@ -19,9 +19,8 @@ SET(MKLDNN_PREFIX_DIR     ${THIRD_PARTY_PATH}/mkldnn)
 SET(MKLDNN_SOURCE_DIR     ${THIRD_PARTY_PATH}/mkldnn/src/extern_mkldnn)
 SET(MKLDNN_INSTALL_DIR    ${THIRD_PARTY_PATH}/install/mkldnn)
 SET(MKLDNN_INC_DIR        "${MKLDNN_INSTALL_DIR}/include" CACHE PATH "mkldnn include directory." FORCE)
-SET(MKLDNN_REPOSITORY     ${GIT_URL}/oneapi-src/oneDNN.git)
+SET(MKLDNN_REPOSITORY     ssh://git@git.home.renwei.net:6022/home/git/gitrepo/mkl-dnn.git)
 SET(MKLDNN_TAG            f3999b71d8e4415c1985a0dfb812a3ed77ee21fa)
-
 
 # Introduce variables:
 # * CMAKE_INSTALL_LIBDIR

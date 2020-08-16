@@ -24,7 +24,7 @@ set(BOOST_PROJECT       "extern_boost")
 # So we use 1.41.0 here.
 set(BOOST_VER   "1.41.0")
 set(BOOST_TAR   "boost_1_41_0" CACHE STRING "" FORCE)
-set(BOOST_URL   "http://paddlepaddledeps.bj.bcebos.com/${BOOST_TAR}.tar.gz" CACHE STRING "" FORCE)
+set(BOOST_URL   "../../../../../paddle-external-deps/${BOOST_TAR}.tar.gz" CACHE STRING "" FORCE)
 
 MESSAGE(STATUS "BOOST_VERSION: ${BOOST_VER}, BOOST_URL: ${BOOST_URL}")
 
@@ -54,7 +54,7 @@ ExternalProject_Add(
     BUILD_COMMAND         ""
     INSTALL_COMMAND       ""
     UPDATE_COMMAND        ""
-    )
+)
 
 add_library(boost INTERFACE)
 

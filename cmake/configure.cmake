@@ -94,6 +94,7 @@ endif()
 if(WITH_GPU)
     add_definitions(-DPADDLE_WITH_CUDA)
     add_definitions(-DEIGEN_USE_GPU)
+    add_definitions(-DTHRUST_IGNORE_CUB_VERSION_CHECK)
 
     FIND_PACKAGE(CUDA REQUIRED)
 
