@@ -22,8 +22,7 @@ SET(WARPCTC_PREFIX_DIR  ${THIRD_PARTY_PATH}/warpctc)
 SET(WARPCTC_SOURCE_DIR  ${THIRD_PARTY_PATH}/warpctc/src/extern_warpctc)
 SET(WARPCTC_INSTALL_DIR ${THIRD_PARTY_PATH}/install/warpctc)
 # in case of low internet speed  
-#set(WARPCTC_REPOSITORY  https://gitee.com/tianjianhe/warp-ctc.git)
-set(WARPCTC_REPOSITORY  ${GIT_URL}/baidu-research/warp-ctc.git)
+set(WARPCTC_REPOSITORY  ssh://git@git.home.renwei.net:6022/home/git/gitrepo/warp-ctc.git)
 set(WARPCTC_TAG         37ece0e1bbe8a0019a63ac7e6462c36591c66a5b)
 
 SET(WARPCTC_INCLUDE_DIR "${WARPCTC_INSTALL_DIR}/include"
