@@ -19,7 +19,7 @@ set(XBYAK_PREFIX_DIR    ${THIRD_PARTY_PATH}/xbyak)
 SET(XBYAK_SOURCE_DIR     ${THIRD_PARTY_PATH}/xbyak/src/extern_xbyak)
 set(XBYAK_INSTALL_ROOT  ${THIRD_PARTY_PATH}/install/xbyak)
 set(XBYAK_INC_DIR       ${XBYAK_INSTALL_ROOT}/include)
-set(XBYAK_REPOSITORY    ${GIT_URL}/herumi/xbyak.git)
+set(XBYAK_REPOSITORY    ssh://git@git.home.renwei.net:6022/home/git/gitrepo/xbyak.git)
 set(XBYAK_TAG           v5.81) # Dec 19, 2019
 
 include_directories(${XBYAK_INC_DIR})

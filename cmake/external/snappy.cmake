@@ -28,7 +28,7 @@ endif()
 
 ExternalProject_Add(
         extern_snappy
-        GIT_REPOSITORY "https://github.com/google/snappy"
+        GIT_REPOSITORY "ssh://git@git.home.renwei.net:6022/home/git/gitrepo/snappy.git"
         GIT_TAG "1.1.7"
         PREFIX          ${SNAPPY_SOURCES_DIR}
         UPDATE_COMMAND  ""

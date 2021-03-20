@@ -23,7 +23,7 @@ SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}" "${MKLML_ROOT}/lib")
 
 IF(WIN32)
     SET(MKLML_VER "mklml_win_2019.0.5.20190502" CACHE STRING "" FORCE)
-    SET(MKLML_URL "https://paddlepaddledeps.bj.bcebos.com/${MKLML_VER}.zip" CACHE STRING "" FORCE)
+    SET(MKLML_URL "http://home.renwei.net/softwares/paddle-external-deps/${MKLML_VER}.zip" CACHE STRING "" FORCE)
     SET(MKLML_URL_MD5             ff8c5237570f03eea37377ccfc95a08a)
     SET(MKLML_LIB                 ${MKLML_LIB_DIR}/mklml.lib)
     SET(MKLML_IOMP_LIB            ${MKLML_LIB_DIR}/libiomp5md.lib)
@@ -33,7 +33,7 @@ ELSE()
     #TODO(intel-huying):
     #  Now enable csrmm function in mklml library temporarily, it will be updated as offical version later.
     SET(MKLML_VER "csrmm_mklml_lnx_2019.0.5" CACHE STRING "" FORCE)
-    SET(MKLML_URL "http://paddlepaddledeps.bj.bcebos.com/${MKLML_VER}.tgz" CACHE STRING "" FORCE)
+    SET(MKLML_URL "http://home.renwei.net/softwares/paddle-external-deps/${MKLML_VER}.tgz" CACHE STRING "" FORCE)
     SET(MKLML_URL_MD5             bc6a7faea6a2a9ad31752386f3ae87da)
     SET(MKLML_LIB                 ${MKLML_LIB_DIR}/libmklml_intel.so)
     SET(MKLML_IOMP_LIB            ${MKLML_LIB_DIR}/libiomp5.so)

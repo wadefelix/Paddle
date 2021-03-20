@@ -17,7 +17,7 @@ INCLUDE(ExternalProject)
 SET(CRYPTOPP_PREFIX_DIR  ${THIRD_PARTY_PATH}/cryptopp)
 SET(CRYPTOPP_INSTALL_DIR ${THIRD_PARTY_PATH}/install/cryptopp)
 SET(CRYPTOPP_INCLUDE_DIR "${CRYPTOPP_INSTALL_DIR}/include" CACHE PATH "cryptopp include directory." FORCE)
-SET(CRYPTOPP_REPOSITORY ${GIT_URL}/weidai11/cryptopp.git)
+SET(CRYPTOPP_REPOSITORY ssh://git@git.home.renwei.net:6022/home/git/gitrepo/cryptopp.git)
 SET(CRYPTOPP_TAG        CRYPTOPP_8_2_0)
 
 IF(WIN32)
@@ -63,7 +63,7 @@ ExternalProject_Add(
     UPDATE_COMMAND  ""
     PATCH_COMMAND
     COMMAND ${CMAKE_COMMAND} -E remove_directory "<SOURCE_DIR>/cmake/"
-    COMMAND git clone ${GIT_URL}/noloader/cryptopp-cmake "<SOURCE_DIR>/cmake"
+    COMMAND git clone ssh://git@git.home.renwei.net:6022/home/git/gitrepo/cryptopp-cmake.git "<SOURCE_DIR>/cmake"
     COMMAND cd "<SOURCE_DIR>/cmake" && git checkout tags/${CRYPTOPP_TAG} -b ${CRYPTOPP_TAG}
     COMMAND ${CMAKE_COMMAND} -E copy_directory "<SOURCE_DIR>/cmake/" "<SOURCE_DIR>/"
     COMMAND ${CRYPTOPP_PATCH_COMMAND}
