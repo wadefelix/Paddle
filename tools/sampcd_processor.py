@@ -301,7 +301,7 @@ def get_incrementapi():
     this function will get the apis that difference between API_DEV.spec and API_PR.spec.
     '''
     global API_DEV_SPEC_FN, API_PR_SPEC_FN, API_DIFF_SPEC_FN  ## readonly
-    dev_api = get_api_md5(API_DEV_SPEC_FN)
+    dev_api = {}  # get_api_md5(API_DEV_SPEC_FN)
     pr_api = get_api_md5(API_PR_SPEC_FN)
     with open(API_DIFF_SPEC_FN, 'w') as f:
         for key in pr_api:
