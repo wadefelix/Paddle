@@ -92,10 +92,10 @@ Examples:
     .. code-block:: python
 
         import paddle
-        import paddle.nn.functional as F
+        import paddle.nn.functional
 
         x = paddle.to_tensor([-0.4, -0.2, 0.1, 0.3])
-        out = F.sigmoid(x)
+        out = paddle.nn.functional.sigmoid(x)
         print(out)
         # [0.40131234 0.450166   0.52497919 0.57444252]
 
