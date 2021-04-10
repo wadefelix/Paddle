@@ -195,7 +195,7 @@ std::unique_ptr<PaddlePredictor> NativePaddlePredictor::Clone() {
   return cls;
 #else
   // fix manylinux compile error.
-  return std::move(cls);
+  return cls;
 #endif
 }
 
@@ -377,7 +377,7 @@ std::unique_ptr<PaddlePredictor> CreatePaddlePredictor<
   // fix clang compile error
   return predictor;
 #else
-  return std::move(predictor);
+  return predictor;
 #endif
 }
 
