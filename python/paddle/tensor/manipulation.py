@@ -696,7 +696,7 @@ def squeeze(x, axis=None, name=None):
 def squeeze_(x, axis=None, name=None):
     """
     Inplace version of ``squeeze`` API, the output Tensor will be inplaced with input ``x``.
-    Please refer to :ref:`api_paddle_tensor_squeeze`.
+    Please refer to :ref:`api_paddle_tensor_manipulation_squeeze`.
     """
     if axis is None:
         axis = []
@@ -886,7 +886,7 @@ def unsqueeze(x, axis, name=None):
 def unsqueeze_(x, axis, name=None):
     """
     Inplace version of ``unsqueeze`` API, the output Tensor will be inplaced with input ``x``.
-    Please refer to :ref:`api_paddle_tensor_unsqueeze`.
+    Please refer to :ref:`api_paddle_tensor_manipulation_unsqueeze`.
     """
     if isinstance(axis, int):
         axis = [axis]
@@ -1136,7 +1136,7 @@ def scatter(x, index, updates, overwrite=True, name=None):
 def scatter_(x, index, updates, overwrite=True, name=None):
     """
     Inplace version of ``scatter`` API, the output Tensor will be inplaced with input ``x``.
-    Please refer to :ref:`api_paddle_tensor_scatter`.
+    Please refer to :ref:`api_paddle_tensor_manipulation_scatter`.
     """
     return core.ops.scatter_(x, index, updates, 'overwrite', overwrite)
 
@@ -1656,7 +1656,7 @@ def reshape(x, shape, name=None):
 def reshape_(x, shape, name=None):
     """
     Inplace version of ``reshape`` API, the output Tensor will be inplaced with input ``x``.
-    Please refer to :ref:`api_paddle_tensor_reshape`.
+    Please refer to :ref:`api_paddle_tensor_manipulation_reshape`.
     """
     if isinstance(shape, (list, tuple)):
         shape = [
