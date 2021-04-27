@@ -55,7 +55,7 @@ ExternalProject_Add(
     BUILD_COMMAND         ""
     INSTALL_COMMAND       ""
     UPDATE_COMMAND        ""
-    )
+)
 
 add_library(boost INTERFACE)
 

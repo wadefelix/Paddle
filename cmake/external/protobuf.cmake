@@ -206,7 +206,7 @@ elseif(WITH_ASCEND_CL AND NOT WITH_ASCEND_CXX11)
     SET(PROTOBUF_TAG         v3.8.0)
 else()
     SET(PROTOBUF_REPOSITORY  ssh://git@git.home.renwei.net:6022/home/git/gitrepo/protobuf.git)
-    SET(PROTOBUF_TAG         9f75c5aa851cd877fb0d93ccc31b8567a6706546)
+    SET(PROTOBUF_TAG         local-build)
 endif()
 
     cache_third_party(${TARGET_NAME}
