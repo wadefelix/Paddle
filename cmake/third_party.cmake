@@ -248,7 +248,7 @@ if(WITH_GPU)
         include(external/cub)       # download cub
         list(APPEND third_party_deps extern_cub)
     endif()
-    set(URL  "http://home.renwei.net/softwares/paddle-external-deps/externalErrorMsg.tar.gz" CACHE STRING "" FORCE)
+    set(URL  "../../../../paddle-external-deps/externalErrorMsg.tar.gz" CACHE STRING "" FORCE)
     file_download_and_uncompress(${URL} "externalError" MD5 c0749523ebb536eb7382487d645d9cd4)   # download file externalErrorMsg.tar.gz
     if(WITH_TESTING)
         # copy externalErrorMsg.pb for unittest 'enforce_test'

@@ -19,7 +19,7 @@ SET(DGC_SOURCES_DIR "${THIRD_PARTY_PATH}/dgc/src/extern_dgc")
 SET(DGC_INSTALL_DIR "${THIRD_PARTY_PATH}/install/dgc")
 SET(DGC_INCLUDE_DIR "${DGC_INSTALL_DIR}/include" CACHE PATH "dgc include directory." FORCE)
 SET(DGC_LIBRARIES   "${DGC_INSTALL_DIR}/lib/libdgc.a" CACHE FILEPATH "dgc library." FORCE)
-SET(DGC_URL         "http://home.renwei.net/softwares/paddle-external-deps/collective_f66ef73.tgz")
+SET(DGC_URL         "../../../../../paddle-external-deps/collective_f66ef73.tgz")
 INCLUDE_DIRECTORIES(${DGC_INCLUDE_DIR})
 
 cache_third_party(extern_dgc
