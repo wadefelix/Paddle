@@ -135,20 +135,23 @@ def get_all_api(root_path='paddle', attr="__all__"):
     api_counter = 0
     for filefinder, name, ispkg in pkgutil.walk_packages(
             path=paddle.__path__, prefix=paddle.__name__ + '.'):
+        note = 'default'
         try:
             if name in sys.modules:
+                note = 'in sys.modules[{}]'.format(name)
                 m = sys.modules[name]
             else:
                 # importlib.import_module(name)
+                note = 'in eval({})'.format(name)
                 m = eval(name)
                 continue
         except AttributeError:
-            logger.warning("AttributeError occurred when `eval(%s)`", name)
+            logger.warning("AttributeError occurred when `eval(%s)`, note=%s", name, note)
             pass
         else:
-            api_counter += process_module(m, attr)
+            api_counter += process_module(m, attr, note)
 
-    api_counter += process_module(paddle, attr)
+    api_counter += process_module(paddle, attr, 'paddle root')
 
     logger.info('%s: collected %d apis, %d distinct apis.', attr, api_counter,
                 len(api_info_dict))
@@ -157,20 +160,21 @@ def get_all_api(root_path='paddle', attr="__all__"):
             for api_info in api_info_dict.values()]
 
 
-def insert_api_into_dict(full_name, gen_doc_anno=None):
+def insert_api_into_dict(full_name, gen_doc_anno=None, note=''):
     """
     insert add api into the api_info_dict
     Return:
         api_info object or None
     """
+    import paddle
     try:
         obj = eval(full_name)
         fc_id = id(obj)
     except AttributeError:
-        logger.warning("AttributeError occurred when `id(eval(%s))`", full_name)
+        logger.warning("AttributeError occurred when `id(eval(%s))`, note=%s", full_name, note)
         return None
     except:
-        logger.warning("Exception occurred when `id(eval(%s))`", full_name)
+        logger.warning("Exception occurred when `id(eval(%s))`, note=%s", full_name, note)
         return None
     else:
         logger.debug("adding %s to api_info_dict.", full_name)
@@ -193,7 +197,7 @@ def insert_api_into_dict(full_name, gen_doc_anno=None):
 
 
 # step 1 fill field : `id` & `all_names`, type, docstring
-def process_module(m, attr="__all__"):
+def process_module(m, attr="__all__", note=''):
     api_counter = 0
     if hasattr(m, attr):
         # may have duplication of api
@@ -204,16 +208,16 @@ def process_module(m, attr="__all__"):
 
             # api's fullname
             full_name = m.__name__ + "." + api
-            api_info = insert_api_into_dict(full_name)
+            api_info = insert_api_into_dict(full_name, None, note)
             if api_info is not None:
                 api_counter += 1
-                if inspect.isclass(api_info['object']):
+                if False and inspect.isclass(api_info['object']):
                     for name, value in inspect.getmembers(api_info['object']):
                         if (not name.startswith("_")) and hasattr(value,
                                                                   '__name__'):
                             method_full_name = full_name + '.' + name  # value.__name__
                             method_api_info = insert_api_into_dict(
-                                method_full_name, 'class_method')
+                                method_full_name, 'class_method', note)
                             if method_api_info is not None:
                                 api_counter += 1
     return api_counter
